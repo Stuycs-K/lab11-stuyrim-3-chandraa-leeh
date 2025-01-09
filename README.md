@@ -19,17 +19,17 @@ Make a clear list of features that work/dont work
 ## Adventurer Subclasses
 
 ### Fairy
-- Runs on special: fairyDust
-- attack: 0-3 damage on others, restores own fairyDust by 2
-- specialAttack: uses 5 fairyDust, reduces opponent's special by 8
-- support (self): gets 5 fairyDust from the Magical Forest
-- support (others): spells others with 5 added special
+- Runs on special: **fairyDust**
+- **attack**: 0-3 damage on others, restores own fairyDust by 2
+- **specialAttack**: uses 5 fairyDust, reduces opponent's special by 8
+- **support (self)**: gets 5 fairyDust from the Magical Forest
+- **support (others)**: spells others with 5 added special
 
 ### Elf
-- Runs on special: candyCanes
-- attack: 0-5 damage on others, restores own candyCanes by 1
-- specialAttack: uses 6 candyCanes, reduces opponent's special by 10
-- support (self): gets 5 candyCanes from the North Pole
-- support (others): bakes cookies with 5 added special
+- Runs on special: **candyCanes**
+- **attack**: 0-5 damage on others, restores own candyCanes by 1
+- **specialAttack**: uses 6 candyCanes, reduces opponent's special by 10
+- **support (self)**: gets 5 candyCanes from the North Pole
+- **support (others)**: bakes cookies with 5 added special
 
 
