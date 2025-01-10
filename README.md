@@ -20,21 +20,22 @@ Make a clear list of features that work/dont work
 
 ### Fairy
 - Runs on special: **fairyDust**
-- **attack**: 4-8 damage on others, heals itself by 3 HP
+- **attack**: deals 4-8 damage to target opponent, heals itself by 3 HP
 - **specialAttack**: uses 5 fairyDust, reduces opponent's special by 10
 - **support (self)**: gets 5 fairyDust from the Magical Forest
 - **support (others)**: spells others with 5 added special
 
 ### Elf
 - Runs on special: **candyCanes**
-- **attack**: 0-5 damage on others, restores own by 3
-- **specialAttack**: uses 6 candyCanes, reduces opponent's special by 10, increases the damage by 2 for next two turns.
+- **attack**: deals 0-5 damage to target opponent, restores own by 3
+- **specialAttack**: uses 6 candyCanes, reduces opponent's hp by 4, increases damage from all sources from your team by 2 damage.
 - **support (self)**: gets 5 candyCanes from the North Pole
 - **support (others)**: bakes cookies with 5 added special
 
 ### Gnome
 - Runs on special: **mushrooms**
-- **attack**: 5-10 damage on all the enemy players, gains 3 mushrooms
-- **specialAttack**: uses 5 mushrooms, 3 HP, 12 damage on others
+- **attack**: deals 1-3 damage on all enemy players, gains 3 mushrooms
+- **specialAttack**: uses 5 mushrooms, 3 HP, 12 damage to target opponent
 - **support (self)**: uses 3 mushrooms to get 8 HP
 - **support (others)**: uses 3 mushrooms to give 5 HP to ally
+
