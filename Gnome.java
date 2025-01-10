@@ -16,33 +16,33 @@ public class Gnome extends Adventurer{
   }
 
   public CodeWarrior(String name){
-    this(name,24);
+    this(name,30);
   }
 
   public CodeWarrior(){
-    this("Carmack");
+    this("Poppy");
   }
 
   /*The next 8 methods are all required because they are abstract:*/
   public String getSpecialName(){
-    return "caffeine";
+    return "mushrooms";
   }
 
   public int getSpecial(){
-    return caffeine;
+    return mushrooms;
   }
 
   public void setSpecial(int n){
-    caffeine = n;
+    mushrooms = n;
   }
 
   public int getSpecialMax(){
-    return caffeineMax;
+    return mushroomMax;
   }
 
   /*Deal 2-7 damage to opponent, restores 2 caffeine*/
-  public String attack(Adventurer other){
-    int damage = (int)(Math.random()*6)+2;
+  public String attack(){
+    int damage = (int)(Math.random()*3)+1;
     other.applyDamage(damage);
     restoreSpecial(2);
     return this + " attacked "+ other + " and dealt "+ damage +
