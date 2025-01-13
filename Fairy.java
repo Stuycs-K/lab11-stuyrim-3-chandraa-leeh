@@ -1,14 +1,14 @@
 public class CodeWarrior extends Adventurer{
     int fairyDust, fairyDustMax;
-    String preferredLanguage;
+    String preferredWand;
 
     /*the other constructors ultimately call the constructor
     *with all parameters.*/
-    public CodeWarrior(String name, int hp, String language){
+    public CodeWarrior(String name, int hp, String wand){
       super(name,hp);
       fairyDustMax = 12;
       fairyDust = fairyDustMax/2;
-      preferredLanguage = language;
+      preferredWand = wand;
     }
 
     public CodeWarrior(String name, int hp){
@@ -53,15 +53,14 @@ public class CodeWarrior extends Adventurer{
     *Reduces caffeine by 8.
     */
     public String specialAttack(Adventurer other){
-      if(getSpecial() >= 8){
-        setSpecial(getSpecial()-8);
-        int damage = (int)(Math.random()*5+Math.random()*5)+3;
-        other.applyDamage(damage);
+      if(getSpecial() >= 5){
+        setSpecial(getSpecial() - 5);
+        other.setSpecial(getSpecial() - 10);
         return this + " used their "+preferredLanguage+
         " skills to hack the matrix. "+
         " This glitched out "+other+" dealing "+ damage +" points of damage.";
       }else{
-        return "Not enough caffeine to use the ultimate code. Instead "+attack(other);
+        return "Not enough fairyDust to use the ultimate code. Instead "+attack(other);
       }
 
     }
