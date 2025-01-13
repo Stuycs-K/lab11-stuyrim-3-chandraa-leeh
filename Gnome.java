@@ -41,13 +41,16 @@ public class Gnome extends Adventurer{
   }
 
   /*Deal 2-7 damage to opponent, restores 2 caffeine*/
-  public String attack(Adventurer other){
+  public String attack(Arraylist<Adventurer> others){
     int damage = (int)(Math.random()*3)+1;
     other.applyDamage(damage);
+    for (int i = 0; i < others.length(); i++) {
+      other[i].applyDamage
+    }
     restoreSpecial(3);
     return this + " attacked "+ other + " and dealt "+ damage +
     " points of damage. They then take a sip of their coffee.";
-  }
+  }s
 
   /*uses 5 mushrooms, 3 HP, 12 damage to target opponent
   */
@@ -68,7 +71,7 @@ public class Gnome extends Adventurer{
     }
     return "Not enough mushrooms foraged. Instead "+attack(other);
   }
-  /*Restores 5 special to other*/
+  /* uses 3 mushrooms to give 5 HP to ally*/
   public String support(Adventurer other){
     return "Gives a coffee to "+other+" and restores "
     + other.restoreSpecial(5)+" "+other.getSpecialName();
@@ -79,5 +82,12 @@ public class Gnome extends Adventurer{
     setHP(getHP()+hp);
     return this+" drinks a coffee to restores "+restoreSpecial(6)+" "
     + getSpecialName()+ " and "+hp+" HP";
+  }
+
+  public static void main(String[] args) {
+    Gnome a2 = new Gnome( "a2",  20,  "trowel");
+    Gnome a1 = new Gnome( "a1",  20,  "trowel2");
+    System.out.println(a2.specialAttack(a1));
+    System.out.println(a1.getHP());
   }
 }
