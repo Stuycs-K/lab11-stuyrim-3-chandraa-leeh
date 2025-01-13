@@ -1,14 +1,14 @@
 public class CodeWarrior extends Adventurer{
     int fairyDust, fairyDustMax;
-    String preferredWand;
+    String preferredWandType;
 
     /*the other constructors ultimately call the constructor
     *with all parameters.*/
-    public CodeWarrior(String name, int hp, String wand){
+    public CodeWarrior(String name, int hp, String wandtype){
       super(name,hp);
       fairyDustMax = 12;
       fairyDust = fairyDustMax/2;
-      preferredWand = wand;
+      preferredWandType = wandtype;
     }
 
     public CodeWarrior(String name, int hp){
@@ -45,8 +45,8 @@ public class CodeWarrior extends Adventurer{
       int damage = (int)(Math.random()*5)+4;
       other.applyDamage(damage);
       setHP(this.HP + 3);
-      return this + " attacked "+ other + " and dealt "+ damage +
-      " points of damage. They then take a sip of their coffee.";
+      return this + " spelled "+ other + " and dealt "+ damage +
+      " points of damage. They then take a bite of a healing huckleberry.";
     }
 
     /*Deal 3-12 damage to opponent, only if caffeine is high enough.
@@ -56,11 +56,11 @@ public class CodeWarrior extends Adventurer{
       if(getSpecial() >= 5){
         setSpecial(getSpecial() - 5);
         other.setSpecial(getSpecial() - 10);
-        return this + " used their "+preferredLanguage+
-        " skills to hack the matrix. "+
-        " This glitched out "+other+" dealing "+ damage +" points of damage.";
+        return this + " used their "+preferredWandType+
+        " wand to glitter-bomb "+ other + "." +
+        " This blasted "+other+", decreasing their"+ other.getSpecialName() +" by 10.";
       }else{
-        return "Not enough fairyDust to use the ultimate code. Instead "+attack(other);
+        return "Not enough fairyDust to power the glitter-bomb. Instead "+attack(other);
       }
 
     }
