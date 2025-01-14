@@ -40,17 +40,16 @@ public class Gnome extends Adventurer{
     return mushroomMax;
   }
 
-  /*Deal 2-7 damage to opponent, restores 2 caffeine*/
-  public String attack(Arraylist<Adventurer> others){
+  /*attack: deals 1-3 damage on all enemy players, gains 3 mushrooms*/
+  public String attack(ArrayList<Adventurer> others){
     int damage = (int)(Math.random()*3)+1;
-    other.applyDamage(damage);
     for (int i = 0; i < others.length(); i++) {
-      other[i].applyDamage
+      others[i].applyDamage(damage);
     }
     restoreSpecial(3);
-    return this + " attacked "+ other + " and dealt "+ damage +
-    " points of damage. They then take a sip of their coffee.";
-  }s
+    return this + " attacked the enemy team and dealt "+ damage +
+    " points of damage to each opponent. They then add fertilizer to their mushroom garden";
+  }
 
   /*uses 5 mushrooms, 3 HP, 12 damage to target opponent
   */
