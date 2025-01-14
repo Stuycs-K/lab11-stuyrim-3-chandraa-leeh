@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Gnome extends Adventurer{
   int mushrooms, mushroomMax;
   String gardenTool;
@@ -43,12 +45,16 @@ public class Gnome extends Adventurer{
   /*attack: deals 1-3 damage on all enemy players, gains 3 mushrooms*/
   public String attack(ArrayList<Adventurer> others){
     int damage = (int)(Math.random()*3)+1;
-    for (int i = 0; i < others.length(); i++) {
-      others[i].applyDamage(damage);
+    for (int i = 0; i < others.size(); i++) {
+      others.get(i).applyDamage(damage);
     }
     restoreSpecial(3);
     return this + " attacked the enemy team and dealt "+ damage +
-    " points of damage to each opponent. They then add fertilizer to their mushroom garden";
+    " points of damage to each opponent. Then, they add fertilizer to their mushroom garden";
+  }
+
+  public String attack(Adventurer other){
+    return "private method";
   }
 
   /*uses 5 mushrooms, 3 HP, 12 damage to target opponent
@@ -70,17 +76,16 @@ public class Gnome extends Adventurer{
     }
     return "Not enough mushrooms foraged. Instead "+attack(other);
   }
-  /* uses 3 mushrooms to give 5 HP to ally*/
+  /* uses 3 mushrooms to give 5 special to ally*/
   public String support(Adventurer other){
     return "Gives a coffee to "+other+" and restores "
     + other.restoreSpecial(5)+" "+other.getSpecialName();
   }
-  /*Restores 6 special and 1 hp to self.*/
+  /*uses 3 mushrooms to get 8 HP*/
   public String support(){
-    int hp = 1;
-    setHP(getHP()+hp);
-    return this+" drinks a coffee to restores "+restoreSpecial(6)+" "
-    + getSpecialName()+ " and "+hp+" HP";
+    setHP(getHP()+8);
+    return this+" eats his mushrooms to restore "+setHP(getHP() + 8)+" "
+     +hp+" HP";
   }
 
   public static void main(String[] args) {
@@ -88,5 +93,6 @@ public class Gnome extends Adventurer{
     Gnome a1 = new Gnome( "a1",  20,  "trowel2");
     System.out.println(a2.specialAttack(a1));
     System.out.println(a1.getHP());
+
   }
 }
