@@ -1,26 +1,26 @@
-public class CodeWarrior extends Adventurer{
+public class Fairy extends Adventurer{
     int fairyDust, fairyDustMax;
     String preferredWandType;
 
     /*the other constructors ultimately call the constructor
     *with all parameters.*/
-    public CodeWarrior(String name, int hp, String wandtype){
+    public Fairy(String name, int hp, String wandtype){
       super(name,hp);
       fairyDustMax = 12;
       fairyDust = fairyDustMax/2;
       preferredWandType = wandtype;
     }
 
-    public CodeWarrior(String name, int hp){
+    public Fairy(String name, int hp){
       this(name,hp,"c++");
     }
 
-    public CodeWarrior(String name){
+    public Fairy(String name){
       this(name,30);
     }
 
-    public CodeWarrior(){
-      this("Carmack");
+    public Fairy(){
+      this("Aurora");
     }
 
     /*The next 8 methods are all required because they are abstract:*/
@@ -33,11 +33,11 @@ public class CodeWarrior extends Adventurer{
     }
 
     public void setSpecial(int n){
-      caffeine = n;
+      fairyDust = n;
     }
 
     public int getSpecialMax(){
-      return caffeineMax;
+      return fairyDustMax;
     }
 
     /*Deal 4-8 damage to opponent, restores 3 HP*/
@@ -71,9 +71,7 @@ public class CodeWarrior extends Adventurer{
     }
     /*Restores 6 special and 1 hp to self.*/
     public String support(){
-      int hp = 1;
-      setHP(getHP()+hp);
-      return this+" drinks a coffee to restores "+restoreSpecial(6)+" "
-      + getSpecialName()+ " and "+hp+" HP";
+      return this+" travels to the Magic Forest to obtain "+restoreSpecial(5)+" "
+      + getSpecialName();
     }
   }
