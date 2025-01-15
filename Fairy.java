@@ -12,7 +12,7 @@ public class Fairy extends Adventurer{
     }
 
     public Fairy(String name, int hp){
-      this(name,hp,"c++");
+      this(name,hp,"dragonstring");
     }
 
     public Fairy(String name){
@@ -44,7 +44,7 @@ public class Fairy extends Adventurer{
     public String attack(Adventurer other){
       int damage = (int)(Math.random()*5)+4;
       other.applyDamage(damage);
-      setHP(this.HP + 3);
+      setHP(this.getHP() + 3);
       return this + " spelled "+ other + " and dealt "+ damage +
       " points of damage. They then take a bite of a healing huckleberry.";
     }
@@ -58,7 +58,7 @@ public class Fairy extends Adventurer{
         other.setSpecial(getSpecial() - 10);
         return this + " used their "+preferredWandType+
         " wand to glitter-bomb "+ other + "." +
-        " This blasted "+other+", decreasing their"+ other.getSpecialName() +" by 10.";
+        " This blasted "+other+", decreasing their "+ other.getSpecialName() +" by 10.";
       }else{
         return "Not enough fairyDust to power the glitter-bomb. Instead "+attack(other);
       }
@@ -74,4 +74,5 @@ public class Fairy extends Adventurer{
       return this+" travels to the Magic Forest to obtain "+restoreSpecial(5)+" "
       + getSpecialName();
     }
+
   }
