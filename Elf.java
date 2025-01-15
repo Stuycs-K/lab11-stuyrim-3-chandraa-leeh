@@ -1,51 +1,51 @@
-public class Fairy extends Adventurer{
+public class Elf extends Adventurer{
     int candyCanes, candyCaneMax;
     String preferredGift;
 
     /*the other constructors ultimately call the constructor
     *with all parameters.*/
-    public Fairy(String name, int hp, String gift){
+    public Elf(String name, int hp, String gift){
       super(name,hp);
       candyCaneMax = 12;
       candyCanes = candyCaneMax/2;
       preferredGift = gift;
     }
 
-    public Fairy(String name, int hp){
-      this(name,hp,"c++");
+    public Elf(String name, int hp){
+      this(name,hp,"ornament");
     }
 
-    public Fairy(String name){
+    public Elf(String name){
       this(name,30);
     }
 
-    public Fairy(){
-      this("Aurora");
+    public Elf(){
+      this("Ginger");
     }
 
     /*The next 8 methods are all required because they are abstract:*/
     public String getSpecialName(){
-      return "fairyDust";
+      return "candyCanes";
     }
 
     public int getSpecial(){
-      return fairyDust;
+      return candyCanes;
     }
 
     public void setSpecial(int n){
-      fairyDust = n;
+      candyCanes = n;
     }
 
     public int getSpecialMax(){
-      return fairyDustMax;
+      return candyCaneMax;
     }
 
     /*Deal 4-8 damage to opponent, restores 3 HP*/
     public String attack(Adventurer other){
       int damage = (int)(Math.random()*5)+4;
       other.applyDamage(damage);
-      setHP(this.HP + 3);
-      return this + " spelled "+ other + " and dealt "+ damage +
+      setHP(getHP() + 3);
+      return this + " spelled "+ other + " and dealt "+ damapreferredWandTypege +
       " points of damage. They then take a bite of a healing huckleberry.";
     }
 
