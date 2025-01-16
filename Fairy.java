@@ -2,11 +2,9 @@ public class Fairy extends Adventurer{
     int fairyDust, fairyDustMax;
     String preferredWandType;
 
-    /*the other constructors ultimately call the constructor
-    *with all parameters.*/
     public Fairy(String name, int hp, String wandtype){
       super(name,hp);
-      fairyDustMax = 12;
+      fairyDustMax = 16;
       fairyDust = fairyDustMax/2;
       preferredWandType = wandtype;
     }
@@ -23,7 +21,7 @@ public class Fairy extends Adventurer{
       this("Aurora");
     }
 
-    /*The next 8 methods are all required because they are abstract:*/
+
     public String getSpecialName(){
       return "fairyDust";
     }
@@ -40,7 +38,7 @@ public class Fairy extends Adventurer{
       return fairyDustMax;
     }
 
-    /*Deal 4-8 damage to opponent, restores 3 HP*/
+
     public String attack(Adventurer other){
       int damage = (int)(Math.random()*5)+4;
       other.applyDamage(damage);
@@ -49,9 +47,7 @@ public class Fairy extends Adventurer{
       " points of damage. They then take a bite of a healing huckleberry.";
     }
 
-    /*Deal 3-12 damage to opponent, only if caffeine is high enough.
-    *Reduces caffeine by 8.
-    */
+
     public String specialAttack(Adventurer other){
       if(getSpecial() >= 5){
         setSpecial(getSpecial() - 5);
@@ -64,12 +60,12 @@ public class Fairy extends Adventurer{
       }
 
     }
-    /*Restores 5 special to other*/
+
     public String support(Adventurer other){
       return "Spells "+other+" with "
       + other.restoreSpecial(5)+" "+other.getSpecialName();
     }
-    /*Restores 6 special and 1 hp to self.*/
+
     public String support(){
       return this+" travels to the Magic Forest to obtain "+restoreSpecial(5)+" "
       + getSpecialName();

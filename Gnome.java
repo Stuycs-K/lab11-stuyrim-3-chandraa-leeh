@@ -83,13 +83,4 @@ public class Gnome extends Adventurer{
     return this+" eats his mushrooms to restore 8 HP";
   }
 
-  public static void main(String[] args) {
-    Gnome a2 = new Gnome( "a2",  20,  "trowel");
-    Gnome a1 = new Gnome( "a1",  20,  "trowel2");
-    System.out.println(a2.specialAttack(a1));
-    System.out.println(a1.getHP());
-    System.out.println(a1.support());
-    System.out.println(a1.getHP());
-    
-  }
 }
