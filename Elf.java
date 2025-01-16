@@ -12,7 +12,7 @@ public class Elf extends Adventurer{
     }
 
     public Elf(String name, int hp){
-      this(name,hp,"ornament");
+      this(name,hp,"wrappingPaper");
     }
 
     public Elf(String name){
@@ -42,11 +42,11 @@ public class Elf extends Adventurer{
 
     /*Deal 4-8 damage to opponent, restores 3 HP*/
     public String attack(Adventurer other){
-      int damage = (int)(Math.random()*5)+4;
-      other.applyDamage(damage);
-      setHP(getHP() + 3);
-      return this + " spelled "+ other + " and dealt "+ damapreferredWandTypege +
-      " points of damage. They then take a bite of a healing huckleberry.";
+      int damage = (int)(Math.random()*5)+2;
+      other.setSpecial(getSpecial() - damage);
+      restoreSpecial(damage);
+      return other + " got trapped in  "+ this + "'s " + preferredGift + "and got mugged for"
+      + damage + " points of " + other.getSpecial() + this + " gains " + damage + getSpecial();
     }
 
     /*Deal 3-12 damage to opponent, only if caffeine is high enough.
