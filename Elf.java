@@ -53,12 +53,12 @@ public class Elf extends Adventurer{
     *Reduces caffeine by 8.
     */
     public String specialAttack(Adventurer other){
-      damage = getSpecial();
+      int damage = getSpecial();
       if(getSpecial() >= 0){
         setSpecial(0);
         other.applyDamage(damage);
-        return this + " all their "+getSpecial()+
-        " at "+ other + ". This  "+other+", decreasing their"+ other.getSpecialName() +" by 10.";
+        return this + "harnessed all of their "+getSpecial()+
+        "into a bomb and threw it at "+ other + ", decreasing " + other + "'s "+ other.getSpecialName() +" by " + damage;
       }else{
         return "Not enough fairyDust to power the glitter-bomb. Instead "+attack(other);
       }
@@ -66,12 +66,15 @@ public class Elf extends Adventurer{
     }
     /*Restores 5 special to other*/
     public String support(Adventurer other){
-      return "Spells "+other+" with "
-      + other.restoreSpecial(5)+" "+other.getSpecialName();
+      if (this.getHP() <= 5) {
+        return "Not enough hp! You're going to die. Instead, " + support();
+      }
+      return this + " gives 5 hp to "+other+". Santa notices " + this + "'s good deed and rewards " + this + " with"
+      + restoreSpecial(8)+" "+other.getSpecialName();
     }
     /*Restores 6 special and 1 hp to self.*/
     public String support(){
-      return this+" travels to the Magic Forest to obtain "+restoreSpecial(5)+" "
+      return this+" travels to the Magic Forest to obtain "+setHP(getHP() + 5)+" "
       + getSpecialName();
     }
   }
