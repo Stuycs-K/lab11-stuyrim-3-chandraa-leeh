@@ -72,9 +72,9 @@ public class Elf extends Adventurer{
       return this + " gives 5 hp to "+other+". Santa notices " + this + "'s good deed and rewards " + this + " with"
       + restoreSpecial(8)+" "+other.getSpecialName();
     }
-    /*Restores 6 special and 1 hp to self.*/
+
     public String support(){
-      return this+" travels to the Magic Forest to obtain "+setHP(getHP() + 5)+" "
-      + getSpecialName();
+      this.setSpecial(this.getSpecial() + 5);
+      return this.getName() + " travels to the North Pole to obtain 5 candy canes";
     }
   }
