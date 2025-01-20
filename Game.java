@@ -14,8 +14,18 @@ public class Game{
   public static void drawBackground(){
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
+    Text.clear();
+    for (int x = 1; x <= HEIGHT; x++){
+        for (int y = 1; y <= WIDTH; y++) {
+            if (x == 1 || x == HEIGHT || y == 1 || y == WIDTH){
+                Text.go(x, y);
+                System.out.print(Text.colorize(" ", BORDER_COLOR, BORDER_BACKGROUND));
+            }
+        }
+    }
+    Text.reset();
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-  }
+}
 
   //Display a line of text starting at
   //(columns and rows start at 1 (not zero) in the terminal)
