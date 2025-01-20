@@ -45,7 +45,7 @@ public class Elf extends Adventurer{
       int damage = (int)(Math.random()*5)+2;
       other.setSpecial(getSpecial() - damage);
       restoreSpecial(damage);
-      return other + " got tripped on  "+ this + "'s " + toy + "and got mugged for"
+      return other + " got tripped on  "+ this + "'s " + toy + " and got mugged for "
       + damage + " points of " + other.getSpecial() + this + " gains " + damage + getSpecial();
     }
 
