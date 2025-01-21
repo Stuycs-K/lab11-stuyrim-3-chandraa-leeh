@@ -43,7 +43,7 @@ public class Elf extends Adventurer{
     /*Deal 4-8 damage to opponent, restores 3 HP*/
     public String attack(Adventurer other){
       int damage = (int)(Math.random()*5)+2;
-      other.setSpecial(getSpecial() - damage);
+      other.setSpecial(other.getSpecial() - damage);
       restoreSpecial(damage);
       return other + " got tripped on "+ this + "'s " + toy + " and got mugged for "
       + damage + " points of " + other.getSpecialName() + ". " + this + " gains " + damage + getSpecialName();
