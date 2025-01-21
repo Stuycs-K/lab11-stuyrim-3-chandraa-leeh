@@ -40,11 +40,11 @@ Make a clear list of features that work/dont work
 -:white_check_mark:  **support (others)**: uses 3 mushrooms to give 8 special to ally
 
   ### Boss
--:ballot_box_with_check:  Runs on special: **reindeers**
-- :ballot_box_with_check: **attack**: deals 5 damage. If Boss has over 20 reindeers, the damage dealt is multiplied by reindeers/10. If Boss has over 30 reindeers, it also heals for 10 hp.
-- :ballot_box_with_check: **specialAttack**: Sacrifices 3 reindeers to deal 5 damage to target opponent. Gain 10 hp.
--:ballot_box_with_check:  **support (self)**: Gains 10 special and 5 hp
-- :ballot_box_with_check: **support (others)**: n/a
+-:white_check_mark:  Runs on special: **reindeers**
+- :white_check_mark: **attack**: deals 5 damage. If Boss has over 20 reindeers, the damage dealt is multiplied by reindeers/10. If Boss has over 30 reindeers, it also heals for 10 hp.
+- :white_check_mark: **specialAttack**: Sacrifices 3 reindeers to deal 5 damage to target opponent. Gain 10 hp.
+-:white_check_mark: **support (self)**: Gains 10 special and 5 hp
+- :white_check_mark: **support (others)**: n/a
 
 :x: Supporting other adventurers
 
