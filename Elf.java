@@ -74,7 +74,9 @@ public class Elf extends Adventurer{
     }
 
     public String support(){
-      this.setSpecial(this.getSpecial() + 5);
-      return this.getName() + " travels to the North Pole to obtain 5 candy canes";
+      int heal = getSpecial();
+      setHP(getHP() + heal)
+      this.setSpecial(0);
+      return this.getName() + " makes a sacrifice to Santa and recieves a heal of" + heal + "hp.";
     }
   }
