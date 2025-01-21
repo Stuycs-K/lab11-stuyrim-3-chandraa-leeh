@@ -69,8 +69,12 @@ public class Elf extends Adventurer{
       if (this.getHP() <= 5) {
         return "Not enough hp! You're going to die. Instead, " + support();
       }
+      else {
+        other.setHP(other.getHP() + 5);
+        setHP(getHP() - 5);
       return this + " gives 5 hp to "+other+". Santa notices " + this + "'s good deed and rewards " + this + " with"
       + restoreSpecial(8)+" "+other.getSpecialName();
+      }
     }
 
     public String support(){
