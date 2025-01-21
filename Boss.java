@@ -70,15 +70,16 @@ public class Boss extends Adventurer{
   public String specialAttack(Adventurer other){
     if(getSpecial() >= 3){
       setSpecial(getSpecial()-3);
+      setHP(getHP() + 10);
       other.applyDamage(5);
-      return this + " used "+ mushrooms+
-      " to make the enemy delirious "+
-      " This caused "+other+" to trip over a rock, dealing "+ damage +" points of damage.";
+      return this + " used its "+ getSpecialName() +
+      " to stampede "+ other.getName() +
+      ". This caused "+other+" to fall over, dealing 5 points of damage. " + this + " takes a bite of their carrot to gain 10 HP.";
     }
-    if (getSpecial() <= 3) {
+    if (getSpecial() < 3) {
       return "Not enough reindeers to sacrifice. Instead" + attack(other);
     }
-    return "Not enough mushrooms foraged. Instead "+attack(other);
+    return "Not enough reindeers to sacrifice. Instead" + attack(other);
   }
   /* uses 3 mushrooms to give 5 special to ally*/
   public String support(Adventurer other){
