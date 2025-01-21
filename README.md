@@ -39,3 +39,10 @@ Make a clear list of features that work/dont work
 - **support (self)**: uses 3 mushrooms to get 8 HP
 - **support (others)**: uses 3 mushrooms to give 5 HP to ally
 
+  ### Boss
+- Runs on special: **reindeers**
+- **attack**: deals 5 damage. If Boss has over 20 reindeers, the damage dealt is multiplied by reindeers/10. If Boss has over 30 reindeers, it also heals for 10 hp.
+- **specialAttack**: Sacrifices 3 reindeers to deal 5 damage to target opponent. Gain 10 hp.
+- **support (self)**: Gains 10 special and 5 hp
+- **support (others)**: n/a
+
