@@ -74,21 +74,22 @@ public class Boss extends Adventurer{
       other.applyDamage(5);
       return this + " used its "+ getSpecialName() +
       " to stampede "+ other.getName() +
-      ". This caused "+other+" to fall over, dealing 5 points of damage. " + this + " takes a bite of their carrot to gain 10 HP.";
+      ". This caused "+other.getName()+" to fall over, dealing 5 points of damage. " + this + " takes a bite of their carrot to gain 10 HP.";
     }
-    if (getSpecial() < 3) {
+    else {
       return "Not enough reindeers to sacrifice. Instead" + attack(other);
     }
-    return "Not enough reindeers to sacrifice. Instead" + attack(other);
   }
+
   /* uses 3 mushrooms to give 5 special to ally*/
   public String support(Adventurer other){
-    return "Gives a bag of mushrooms to "+other+" and restores "
-    + other.restoreSpecial(5)+" "+other.getSpecialName();
+    return "No other adventurer to support. Instead" + support();
   }
+
   /*uses 3 mushrooms to get 8 HP*/
   public String support(){
-    setHP(getHP()+8);
+    setHP(getHP()+5);
+    setSpecial(getSpecial() + 10);
     return this+" eats his mushrooms to restore 8 HP";
   }
 
