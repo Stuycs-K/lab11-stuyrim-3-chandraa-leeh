@@ -46,7 +46,7 @@ public class Elf extends Adventurer{
       other.setSpecial(getSpecial() - damage);
       restoreSpecial(damage);
       return other + " got tripped on  "+ this + "'s " + toy + " and got mugged for "
-      + damage + " points of " + other.getSpecial() + this + " gains " + damage + getSpecial();
+      + damage + " points of " + other.getSpecialName() + ". " + this + " gains " + damage + getSpecial();
     }
 
     /*Deal 3-12 damage to opponent, only if caffeine is high enough.
