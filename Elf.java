@@ -57,7 +57,7 @@ public class Elf extends Adventurer{
       if(getSpecial() >= 0){
         setSpecial(0);
         other.applyDamage(damage);
-        return this + "harnessed all of their "+getSpecial()+
+        return this + "harnessed all of their "+getSpecialName()+
         "into a bomb and threw it at "+ other + ", decreasing " + other + "'s "+ other.getSpecialName() +" by " + damage;
       }else{
         return "Not enough fairyDust to power the glitter-bomb. Instead "+attack(other);
