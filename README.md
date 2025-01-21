@@ -29,8 +29,8 @@ Make a clear list of features that work/dont work
 - Runs on special: **candyCanes**
 - **attack**: Steals 2-6 special on attack.
 - **specialAttack**: Consumes all special to do damage equal to the amount of candyCanes
-- **support (self)**: Heals target teammate with 5 hp and recieves 8 special
-- **support (others)**: Consumes all special to recieve a heal equal to the amount of candyCanes
+- **support (others)**: Heals target teammate with 5 hp and recieves 8 special
+- **support (self)**: Consumes all special to recieve a heal equal to the amount of candyCanes
 
 ### Gnome
 - Runs on special: **mushrooms**
