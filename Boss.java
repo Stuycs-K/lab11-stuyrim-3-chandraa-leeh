@@ -8,7 +8,7 @@ public class Boss extends Adventurer{
   *with all parameters.*/
   public Boss(String name, int hp, String tool){
     super(name,hp);
-    reindeerMax = 20;
+    reindeerMax = 200;
     reindeer = 10;
     preferredReindeer = "Dixen";
   }

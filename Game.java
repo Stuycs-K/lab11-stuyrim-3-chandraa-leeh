@@ -198,8 +198,7 @@ public class Game{
     //YOUR CODE HERE
     int randNum = (int)(Math.random() * 3) + 1;
       if (randNum == 1){
-        //enemies.add(new Boss("Boss " + (int)(Math.random()*100)));
-        enemies.add(createRandomAdventurer("Enemy"));
+        enemies.add(new Boss("Boss " + (int)(Math.random()*100)));
       }
       else{
         if (randNum == 2){
