@@ -58,6 +58,7 @@ public class Gnome extends Adventurer{
     if(getSpecial() >= 5 && getHP() > 3){
       setSpecial(getSpecial()-5);
       int damage = (int) 12;
+      setHP(getHP() - 3);
       other.applyDamage(damage);
       return this + " used "+getSpecialName()+
       " to make the enemy delirious "+
