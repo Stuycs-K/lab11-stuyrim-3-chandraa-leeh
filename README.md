@@ -29,13 +29,13 @@ Make a clear list of features that work/dont work
 - Runs on special: **candyCanes**
 - **attack**: Steals 2-6 special on attack.
 - **specialAttack**: Consumes all special to do damage equal to the amount of candyCanes
-- **support (others)**: Heals target teammate with 5 hp and recieves 8 special
+- **support (others)**: Heals target teammate with 5 hp and loses 5 hp and recieves 8 special
 - **support (self)**: Consumes all special to recieve a heal equal to the amount of candyCanes
 
 ### Gnome
 - Runs on special: **mushrooms**
 - **attack**: deals 3-5 damage to target enemy player, gains 3 mushrooms
-- **specialAttack**: uses 5 mushrooms, 3 HP, 12 damage to target opponent
+- **specialAttack**: uses 5 mushrooms, to deal 12 damage to target opponent
 - **support (self)**: uses 3 mushrooms to get 8 HP
 - **support (others)**: uses 3 mushrooms to give 8 special to ally
 
@@ -45,4 +45,4 @@ Make a clear list of features that work/dont work
 - **specialAttack**: Sacrifices 3 reindeers to deal 5 damage to target opponent. Gain 10 hp.
 - **support (self)**: Gains 10 special and 5 hp
 - **support (others)**: n/a
-
+- 
