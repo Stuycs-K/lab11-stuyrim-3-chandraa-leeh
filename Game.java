@@ -1,6 +1,6 @@
 import java.util.*;
 public class Game{
-  private static final int WIDTH = 80;
+  private static final int WIDTH = 200;
   private static final int HEIGHT = 30;
   private static final int BORDER_COLOR = Text.BLACK;
   private static final int BORDER_BACKGROUND = Text.WHITE + Text.BACKGROUND;
@@ -34,7 +34,7 @@ public class Game{
   public static void drawText(String s,int startRow, int startCol){
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
-    if (currentRow >= HEIGHT)
+    if (currentRow >= HEIGHT - 6)
     {
       currentRow = 2;
       Text.clear();
@@ -100,10 +100,21 @@ public class Game{
     *Caffeine: 20 Mana: 10   Snark: 1
     * ***THIS ROW INTENTIONALLY LEFT BLANK***
     */
-    public static void drawParty(ArrayList<Adventurer> party,int startRow){
+    public static void drawParty(ArrayList<Adventurer> party,int startCol){
 
       /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
       //YOUR CODE HERE
+      for (int i = 0; i < party.size(); i++){
+        Text.go(27, startCol + i * 20);
+        System.out.print((party.get(i).getName()));
+        Text.go(28, startCol + i * 20);
+        System.out.print("HP: " + party.get(i).getHP());
+        Text.go(29, startCol + i * 20);
+        System.out.print(party.get(i).getSpecialName() + ": " + party.get(i).getSpecial());
+      }
+
+
+
       /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
     }
 
@@ -125,12 +136,12 @@ public class Game{
   //Display the party and enemies
   //Do not write over the blank areas where text will appear.
   //Place the cursor at the place where the user will by typing their input at the end of this method.
-  public static void drawScreen(){
+  public static void drawScreen(ArrayList<Adventurer> party, ArrayList<Adventurer> enemies){
 
     drawBackground();
-
+    drawParty(party, 20);
     //draw player party
-
+    drawParty(enemies, 120);
     //draw enemy party
 
   }
@@ -224,7 +235,7 @@ public class Game{
     //Draw the window border
 
     //You can add parameters to draw screen!
-    drawScreen();//initial state.
+    drawScreen(party, enemies);//initial state.
 
     //Main loop
 
@@ -240,7 +251,7 @@ public class Game{
 
       //example debug statment
       //TextBox(24,2,1,78,"input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent );
-      drawText("input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent, 0, 2);
+      //drawText("input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent, 0, 2);
 
       //display event based on last turn's input
       if(partyTurn){
@@ -361,7 +372,7 @@ public class Game{
       }
 
       //display the updated screen after input has been processed.
-      drawScreen();
+      drawScreen(party, enemies);
 
 
     }//end of main game loop
