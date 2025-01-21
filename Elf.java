@@ -75,7 +75,7 @@ public class Elf extends Adventurer{
 
     public String support(){
       int heal = getSpecial();
-      setHP(getHP() + heal)
+      setHP(getHP() + heal);
       this.setSpecial(0);
       return this.getName() + " makes a sacrifice to Santa and recieves a heal of" + heal + "hp.";
     }
