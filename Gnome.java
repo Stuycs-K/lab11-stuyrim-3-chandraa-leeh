@@ -44,11 +44,10 @@ public class Gnome extends Adventurer{
 
   /*attack: deals 1-3 damage on all enemy players, gains 3 mushrooms*/
   public String attack(Adventurer other){
-    int damage = (int)(Math.random()*3)+1;
+    int damage = (int)(Math.random()*3)+3;
     other.applyDamage(damage);
-    other.restoreSpecial(-1);
     restoreSpecial(3);
-    return this + " attacked" + other.getName() + " and dealt " + damage +
+    return this + " attacked " + other.getName() + " and dealt " + damage +
     " points of damage to the opponent. Then, they add fertilizer to their mushroom garden to recieve 3 mushrooms";
   }
 
@@ -60,7 +59,7 @@ public class Gnome extends Adventurer{
       setSpecial(getSpecial()-5);
       int damage = (int) 12;
       other.applyDamage(damage);
-      return this + " used "+mushrooms+
+      return this + " used "+getSpecialName()+
       " to make the enemy delirious "+
       " This caused "+other+" to trip over a rock, dealing "+ damage +" points of damage.";
     }
@@ -74,11 +73,14 @@ public class Gnome extends Adventurer{
   }
   /* uses 3 mushrooms to give 5 special to ally*/
   public String support(Adventurer other){
+    setSpecial(getSpecial() - 3);
+    other.setSpecial(other.getSpecial() + 8);
     return "Gives a bag of mushrooms to "+other+" and restores "
-    + other.restoreSpecial(5)+" "+other.getSpecialName();
+    + "5 "+other.getSpecialName();
   }
   /*uses 3 mushrooms to get 8 HP*/
   public String support(){
+    setSpecial(getSpecial() - 3);
     setHP(getHP()+8);
     return this+" eats his mushrooms to restore 8 HP";
   }
