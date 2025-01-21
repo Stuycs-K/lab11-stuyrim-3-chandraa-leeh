@@ -268,7 +268,7 @@ public class Game{
 
       //example debug statment
       //TextBox(24,2,1,78,"input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent );
-      //drawText("input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent, 0, 2);
+      drawText("input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent, 0, 2);
 
       //display event based on last turn's input
       if(partyTurn){
@@ -319,7 +319,7 @@ public class Game{
         }else{
           //This is after the player's turn, and allows the user to see the enemy turn
           //Decide where to draw the following prompt:
-          String prompt = "press enter to see monster's turn";
+          String prompt = "Enter command for "+enemies.get(whichOpponent)+": attack/special/quit";
           drawText(prompt, 0, 2);
 
           partyTurn = false;
