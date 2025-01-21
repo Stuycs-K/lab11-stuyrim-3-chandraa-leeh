@@ -35,7 +35,7 @@ Make a clear list of features that work/dont work
 ### Gnome
 - Runs on special: **mushrooms**
 - **attack**: deals 3-5 damage to target enemy player, gains 3 mushrooms
-- **specialAttack**: uses 5 mushrooms, to deal 12 damage to target opponent
+- **specialAttack**: uses 5 mushrooms and 3 hp to deal 12 damage to target opponent
 - **support (self)**: uses 3 mushrooms to get 8 HP
 - **support (others)**: uses 3 mushrooms to give 8 special to ally
 
