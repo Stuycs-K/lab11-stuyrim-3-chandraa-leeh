@@ -27,10 +27,10 @@ Make a clear list of features that work/dont work
 
 ### Elf
 - Runs on special: **candyCanes**
-- **attack**: deals 0-5 damage to target opponent, restores own by 3
-- **specialAttack**: uses 6 candyCanes, reduces opponent's hp by 4, increases damage from all sources from your team by 2 damage.
-- **support (self)**: gets 5 candyCanes from the North Pole
-- **support (others)**: bakes cookies with 5 added special
+- **attack**: Steals 2-6 special on attack.
+- **specialAttack**: Consumes all special to do damage equal to the amount of candyCanes
+- **support (self)**: Heals target teammate with 5 hp and recieves 8 special
+- **support (others)**: Consumes all special to recieve a heal equal to the amount of candyCanes
 
 ### Gnome
 - Runs on special: **mushrooms**
