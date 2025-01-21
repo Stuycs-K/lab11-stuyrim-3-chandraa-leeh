@@ -148,7 +148,7 @@ public class Game{
 
   public static String userInput(Scanner in){
       //Move cursor to prompt location
-      //Text.go(, );
+      Text.go(currentRow, 150);
 
       //show cursor
       Text.showCursor();
@@ -372,7 +372,28 @@ public class Game{
       }
 
       //display the updated screen after input has been processed.
+      for (int i = 0; i < party.size(); i++){
+        if (party.get(i).getHP() <= 0){
+          party.remove(i);
+        }
+      }
+      for (int i = 0; i < enemies.size(); i++){
+        if (enemies.get(i).getHP() <= 0){
+          enemies.remove(i);
+        }
+      }
+      if (party.size() == 0 && enemies.size() > 0){
+        drawText("YOU LOSE!!", 0, 2);
+        quit();
+      }
+      else{
+        if (party.size() > 0 && enemies.size() == 0){
+          drawText("YOU WIN!!", 0, 2);
+          quit();
+        }
+      }
       drawScreen(party, enemies);
+      
 
 
     }//end of main game loop
