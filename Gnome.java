@@ -48,8 +48,8 @@ public class Gnome extends Adventurer{
     other.applyDamage(damage);
     other.restoreSpecial(-1);
     restoreSpecial(3);
-    return this + " attacked the enemy team and dealt "+ damage +
-    " points of damage to each opponent. Then, they add fertilizer to their mushroom garden";
+    return this + " attacked" + other.getName() + " and dealt " + damage +
+    " points of damage to the opponent. Then, they add fertilizer to their mushroom garden to recieve 3 mushrooms";
   }
 
 
