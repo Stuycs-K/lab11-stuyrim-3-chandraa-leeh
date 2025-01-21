@@ -108,7 +108,7 @@ public class Game{
         Text.go(27, startCol + i * 20);
         System.out.print((party.get(i).getName()));
         Text.go(28, startCol + i * 20);
-        System.out.print("HP: " + party.get(i).getHP());
+        System.out.print("HP: " + colorByPercent(party.get(i).getHP(), party.get(i).getmaxHP()));
         Text.go(29, startCol + i * 20);
         System.out.print(party.get(i).getSpecialName() + ": " + party.get(i).getSpecial());
       }
@@ -121,12 +121,29 @@ public class Game{
 
   //Use this to create a colorized number string based on the % compared to the max value.
   public static String colorByPercent(int hp, int maxHP){
-    String output = String.format("%2s", hp+"")+"/"+String.format("%2s", maxHP+"");
+    String output = String.format("%2s", hp + "") + "/" + String.format("%2s", maxHP + "");
+    double percent = (double) hp / maxHP;
+
+    // ANSI color codes
+    String red = "\u001B[31m";    // Red
+    String yellow = "\u001B[33m"; // Yellow
+    String white = "\u001B[37m";  // White
+    String reset = "\u001B[0m";   // Reset to default color
+
+    // Apply color based on percentage
+    if (percent < 0.25){
+        output = red + output + reset;
+    } else if (percent < 0.75){
+        output = yellow + output + reset;
+    } else{
+        output = white + output + reset;
+    }
+
+    return output;
     //COLORIZE THE OUTPUT IF HIGH/LOW:
     // under 25% : red
     // under 75% : yellow
     // otherwise : white
-    return output;
   }
 
 
@@ -181,6 +198,7 @@ public class Game{
     //YOUR CODE HERE
     int randNum = (int)(Math.random() * 3) + 1;
       if (randNum == 1){
+        //enemies.add(new Boss("Boss " + (int)(Math.random()*100)));
         enemies.add(createRandomAdventurer("Enemy"));
       }
       else{
